@@ -1,0 +1,139 @@
+140 lines (101 sloc) 5.3 KB
+
+<html>
+    <head>
+        <title>Currency converter</title>
+
+        <meta charset="UTF-8">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    </head>
+
+    <body style="background-color:cornsilk">
+
+      <div class="container-fluid p-1">
+        <h1 class="display-3 text-center text-primary"><strong>Currency Converter</strong></h1>
+      </div>
+
+        <div class="container-fluid p-2">
+
+            <div class="clearfix">
+                <button type="button" class="btn btn-success btn-lg float-left">Services</button>
+                <button type="button" class="btn btn-primary btn-lg float-right">Login</button>
+            </div>
+            
+            <div class="container-fluid p-5">  
+                <div class="card text-center">
+                    <div class="card-header" style="background-color:darkcyan" >
+                        <p class="display-4"><strong>CONVERSION TABLE</strong></p>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-row">
+                            <div class="form-group col-md-4 lg-12">
+                                <label  for="inputAmount">Amount</label>
+                                <input  id="inputAmount" type="text" class="form-control">
+                            </div>
+        
+        
+                            <div class="form-group col-md-4">
+                                <label for="currencyFrom">From</label>
+                                <select id="currencyFrom" class="form-control"></select>
+                            </div>
+        
+            
+                            <div class="form-group col-md-4">
+                                <label for="currencyTo">To</label>
+                                <select id="currencyTo" class="form-control"></select>
+                               
+                            </div>
+            
+                        </div>
+                        <button id="getAmount" onclick="getSelected()"class="btn btn-primary btn-lg ">Convert</button>
+                       
+                    </div>
+        
+                <div>
+                    <p id="para" class="display-3"></p>
+                </div>
+            </div>
+        </div>
+       
+    </body>
+
+    <script>
+       
+        var btn
+       // window.addEventListener('load',getAmountFunction)
+        window.addEventListener('load',getData)
+
+        function getAmountFunction(){
+            btn = document.getElementById("getAmount")
+            btn.addEventListener("click",getSelected)
+        }
+        
+
+        function getData(){
+            var xhr = new XMLHttpRequest()
+            //xhr.open("GET",url+"/api/v7/convert?q="+curr1+"_"+curr2+"&compact=ultra&apiKey=a5feb71c250255fd9a31")
+            xhr.open("GET", "https://free.currconv.com/api/v7/currencies?apiKey=a5feb71c250255fd9a31")
+            xhr.send()
+            xhr.onload = function(){
+               var fetchedData = JSON.parse(xhr.response)
+                displayData(fetchedData)
+            }
+            
+        }
+
+        function displayData(obj) {
+              var selectFrom = document.getElementById('currencyFrom')
+              var selectTo = document.getElementById('currencyTo')
+            for(key in obj.results) {
+                console.log(obj.results[key].id)
+                optionFrom = document.createElement('option')
+                optionFrom.value =  obj.results[key].id
+                optionFrom.textContent = obj.results[key].id
+                selectFrom.appendChild(optionFrom)
+
+                optionTo = document.createElement('option')
+                optionTo.value =  obj.results[key].id
+                optionTo.textContent = obj.results[key].id
+                selectTo.appendChild(optionTo)
+                
+            }
+        }
+
+        function getSelected(){
+            var xhr = new XMLHttpRequest()
+            var optionFrom=document.getElementById("currencyFrom").value
+            var optionTo=document.getElementById("currencyTo").value
+            //xhr.open("GET",url+"/api/v7/convert?q="+curr1+"_"+curr2+"&compact=ultra&apiKey=a5feb71c250255fd9a31")
+           //xhr.open("GET",url+"/api/v7/convert?q=INR_USD&compact=ultra&apiKey=a5feb71c250255fd9a31") this is api link
+            xhr.open("GET","https://free.currconv.com/api/v7/convert?q="+optionFrom+"_"+optionTo+"&compact=ultra&apiKey=a5feb71c250255fd9a31")
+            xhr.send()
+            xhr.onload = function(){
+               var fetchedData = JSON.parse(xhr.response)
+                displayAmount(fetchedData)
+            }
+            
+        }
+
+        function displayAmount(obj){
+                var optionFrom=document.getElementById("currencyFrom").value
+                var optionTo=document.getElementById("currencyTo").value
+                var givenAmount=document.getElementById("inputAmount").value
+                console.log(Object.values(obj)[0])
+                var fetchedAmount=Object.values(obj)[0]
+                var totalAmount=givenAmount*fetchedAmount
+                var para=document.getElementById("para")
+                para.textContent=givenAmount+" "+optionFrom+"="+totalAmount+" "+optionTo
+        }
+
+       
+        
+       
+        
+
+
+    </script>
+
+  </html>
