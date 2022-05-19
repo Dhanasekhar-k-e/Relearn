@@ -1,0 +1,6 @@
+console.log(typeof({}))
+console.log(typeof([]))
+console.log(typeof(null))
+console.log(typeof(Object))
+console.log(typeof(undefined))
+// console.log(typeof(function))
