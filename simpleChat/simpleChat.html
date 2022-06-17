@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <title>
+        chat client
+        </title>
+        <link rel="stylesheet" href="styles.css">
+        
+    </head>
+    <body onload="onLoad()">
+        <script src="simpleChat.js">
+        </script>
+        <table>
+            <tr>
+                <td>
+                    <div class="content">
+                        <div class="heading">
+                            TOM
+                        </div>
+                        <div class="chat-area1" id="chat-area1">
+                        </div>
+                    </div>
+                </td>
+            
+                <td>
+                    <div class="content">
+                        <div class="heading">
+                            JERRY
+                        </div>
+                        <div class="chat-area2" id="chat-area2">
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="input-area">
+                        <input type="text" class="input-text" id="myInput1">
+                        </input>
+                        <button class="button-specs" onClick="function1()">
+                        SEND
+                        </button>
+                    </div>
+                </td>
+                <td>
+                    <div class="input-area">
+                        <input type="text" class="input-text" id="myInput2" >
+                        </input>
+                        <button class="button-specs" onclick="function2()">
+                        SEND
+                        </button>
+                    </div>
+                </td>
+        </tr>
+        </table>
+
+        <div id="test">
+        </div>
+
+    </body>
+</html>
