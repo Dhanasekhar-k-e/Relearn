@@ -1,0 +1,23 @@
+.box{
+    display:grid;
+    width:800px;
+    grid-template-columns:auto auto auto auto auto auto auto auto;
+    grid-template-rows:auto auto auto auto auto auto auto auto;
+    padding:20px;
+  }
+  
+  div > div{
+    border:1px solid green;
+    width:100px;
+    height:100px;
+  /*   margin:10px; */
+  }
+  
+  .row1:nth-child(odd){
+    background:black;
+  }
+  
+  .row2:nth-child(even){
+    background:black;
+  }
+  
