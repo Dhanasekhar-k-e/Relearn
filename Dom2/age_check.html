@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Enter Age</p>
+    <input placeholder="enter age here" id="input"></input>
+    <br/>
+    <button onclick='eligible()'>Check Eligibility</button>
+    <script>
+        function eligible() {
+
+            var data = document.getElementById('input').value;
+            var result
+            if(data > 18)
+                result = 'You can drive in India!'
+            else if(data == 18)
+                result = 'You are just old enought to drive in India'
+            else
+                result = "You can't drive in India"
+
+            var output = document.createElement('p')
+            output.innerText = result
+
+            document.body.appendChild(output)
+        }
+
+    </script>
+</body>
+</html>
