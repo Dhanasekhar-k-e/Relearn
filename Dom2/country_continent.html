@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>select the country</p>
+    <select id='continent_select'>
+        <option value='choose'>choose</option> 
+        <option value='india'>India</option>
+        <option value='usa'>United States of America</option>
+        <option value='china'>China</option>
+        <option value='nepal'>Nepal</option>
+        <option value='australia'>Australia</option>
+        <option value='france'>France</option>
+        <option value='germany'>Germany</option>
+        <option value='south_africa'>South Africa</option>
+        <option value='nigeria'>Nigeria</option>
+        <option value='mexico'>Mexico</option>
+        <option value='argentina'>Argentina</option>
+        <option value='brazil'>Brazil</option>
+        <option value='canada'>Canada</option>
+        <option value='singapore'>Singapore</option>
+        <option value='sweden'>Sweden</option>
+    </select>
+    <button onclick='find()'>Find the continent</button>
+    <script>
+        function find() {
+            var data = document.getElementById('continent_select').value;
+            var result
+            switch(data){
+                case "india":
+                case "china":
+                case "nepal":
+                case "singapore":
+                    result = 'Asia'
+                    break
+                case "australia":
+                    result = 'Australia'
+                    break
+                case "france":
+                case "germany":
+                case "sweden":
+                    result = 'Europe'
+                    break
+                case "south_africa":
+                case "nigeria":
+                    result = 'Africa'
+                    break
+                case "usa":
+                case "mexico":
+                case "canada":
+                    result = 'North America'
+                    break
+                case "brazil":
+                case "argentina":
+                    result = 'South America'
+                    break
+                default:
+                    result = 'none....as you have not chosen any'
+            }
+    
+            alert("The continent is " + result )
+        }
+    </script>
+</body>
+</html>
