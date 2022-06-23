@@ -12,3 +12,15 @@ function switchColor(){
 
 
 changeButton.addEventListener("click",switchColor)
+
+var changeButton2 = document.getElementById("changeColor2")
+var colors = ['blue','green','yellow','orange',"brown","red","purple","maroon","teal","aqua","silver","gray","fuchsia","lime","olive","navy"]
+var i = 0
+function switchColor2(){
+  
+  changeButton2.style.background=colors[i]
+  i++
+  if(i == colors.length-1)
+    i=0
+}
+changeButton2.addEventListener("click",switchColor2)
