@@ -24,3 +24,11 @@ function switchColor2(){
     i=0
 }
 changeButton2.addEventListener("click",switchColor2)
+
+
+var changeButton3 = document.getElementById("colorChange")
+function switchColor3(){
+    var randomColor = 'rgb('+random(255)+','+random(255)+','+random(255)+')'
+    changeButton3.style.background=randomColor
+  }
+  changeButton3.addEventListener("dblclick",switchColor3)
