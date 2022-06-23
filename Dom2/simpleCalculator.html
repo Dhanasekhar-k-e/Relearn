@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="simpleCalculator.css">
+</head>
+<body>
+    <div class="flex-box">
+        <div id="max">
+        </div>
+     </div>
+     <div class="flex-box" class="inpt">
+       <input id="input-area"></input>
+     </div>
+     <div class="flex-box">
+        <button onclick="clicked0()">0</button>
+        <button onclick="clicked1()">1</button>
+        <button onclick="clicked2()">2</button>
+        <button onclick="clicked3()">3</button>
+        <button onclick="clicked4()">4</button>
+        <button onclick="clicked5()">5</button>
+        <button onclick="clicked6()">6</button>
+        <button onclick="clicked7()">7</button>
+        <button onclick="clicked8()">8</button>
+        <button onclick="clicked9()">9</button>
+     </div>
+     <div class="flex-box">
+       <div>
+            <button class="enter" onclick="add()">+</button>
+            <button class="enter" onclick="sub()">-</button>
+            <button class="enter" onclick="multiply()">*</button>
+            <button class="enter" onclick="division()">/</button>
+            <button class="calculate" onclick="calculate()">=</button>
+            <!-- <button class="calculate" onclick="clear()">clear</button> -->
+       </div>
+     </div>
+     <script type="text/javascript" src="simpleCalculator.js"></script>
+</body>
+</html>
