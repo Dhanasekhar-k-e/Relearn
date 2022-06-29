@@ -8,6 +8,8 @@
   <body>
     <h1></h1>
     <p></p>
+    <a>This session will end in 5 seconds</a>
+    <a id="timer"></a>
     <button onclick="back()">Logout</button>
   </body>
   <script>
@@ -26,11 +28,23 @@
     function back() {
       window.location.href = "index.html";
     }
+    var x = 1
+    function timer(){
+      var timer = document.getElementById("timer")
+        timer.innerText = x++
+        if(x == 5)
+          clearInterval(timer)
+    }
+
+    setInterval(timer,1000)
+
     //auto log out
     setTimeout( function(){
+        var timer = document.getElementById("timer")
+        timer.innerText = 
         alert("logged out")
         back()
-}, 5000)
+}, 6000)
 
   </script>
 </html>

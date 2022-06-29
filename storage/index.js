@@ -23,7 +23,7 @@ function  addUser(){
     
     var uName = document.querySelector(".name").value
     var uPass = document.querySelector(".password").value
-
+    var bool = false
     for(var i=0;i< usersData.length;i++){
         if(uName == usersData[i].name && uPass == usersData[i].password){
           
@@ -40,12 +40,12 @@ function  addUser(){
            localStorage.setItem("AlllogedInuser",data)
 
            window.location.href = "dash.html";
-           
+           bool = true
             
-        }
-
-       
+        }  
     }
-
+    if(bool == false)
+      alert("username or password inncorrect")
+  
     
 }
