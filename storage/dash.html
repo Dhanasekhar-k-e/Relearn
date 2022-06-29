@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1></h1>
+    <p></p>
+    <button onclick="back()">Logout</button>
+  </body>
+  <script>
+    var userName = document.querySelector("h1");
+    var logTime = document.querySelector("p");
+    var loggedIn = sessionStorage.getItem("loggedName");
+    var getTime = sessionStorage.getItem("loggedTime");
+    userName.textContent = loggedIn;
+    logTime.textContent = getTime;
+
+
+   
+    var localName=localStorage.setItem("localname",loggedIn)
+    var localTime=localStorage.setItem("localtime",getTime)
+
+    function back() {
+      window.location.href = "index.html";
+    }
+    //auto log out
+    setTimeout( function(){
+        alert("logged out")
+        back()
+}, 5000)
+
+  </script>
+</html>
