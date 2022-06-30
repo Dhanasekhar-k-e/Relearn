@@ -9,7 +9,16 @@
     <h1>This is admin page</h1>
     <table id="table_data">
     </table>
+    <select id="select" name="users">
+        <option value="none">choose</option>
+    </select>
+    <button onclick="showUserData()" id="logins_btn">Show Logins</button>
+    <br/>
+    <table id="login_table">
+    </table>
+    <br/>
     <button onclick="back()">Log Out</button>
+
     <script type="text/javascript" src="admin.js"></script>
 </body>
 </html>

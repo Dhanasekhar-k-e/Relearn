@@ -4,24 +4,54 @@ var usersData = [
       password:"admin"
     },
     {
-      name: "brucelee",
-      password: "nevergivesup"
+      name: "january",
+      password: "january"
     },
     {
-      name: "charliechaplin",
-      password: "smiling"
+      name: "february",
+      password: "february"
     },
     {
-      name: "wonderwoman",
-      password: "inspirational"
+      name: "march",
+      password: "march"
     },
     {
-      name: "thanos",
-      password: "willtorule"
+      name: "april",
+      password: "april"
+    },
+    {
+      name: "may",
+      password: "may"
+    },
+    {
+      name: "june",
+      password: "june"
+    },
+    {
+      name: "july",
+      password: "july"
+    },
+    {
+      name: "august",
+      password: "august"
+    },
+    {
+      name: "september",
+      password: "september"
+    },
+    {
+      name: "october",
+      password: "october"
+    },
+    {
+      name: "november",
+      password: "november"
+    },
+    {
+      name: "december",
+      password: "december"
     }
   ]
-  
-  // var data = localStorage.getItem()
 
   function login(){
 
@@ -30,25 +60,32 @@ var usersData = [
     var uPass = document.getElementById("password")
     var userPass = uPass.value
     
-    //for customers
+    //for customers login
     for(var i = 1; i < usersData.length; i++){
         var bool = false
-        if(userName == usersData[i].name && userPass == usersData[i].password){
+        if(userName == usersData[i].name || userName == usersData[i].name.toUpperCase() && userPass == usersData[i].password){
 
             var time=new Date().toLocaleString()
             var name=userName
+            
+            // localStorage.setItem("loggedUser",name)
+            // localStorage.setItem("loggedTime",time)
+
             sessionStorage.setItem("loggedUser",name)
             sessionStorage.setItem("loggedTime",time)
+
             bool = true
             window.location.href = "dash.html"
             
         }
     }
-    if(userName == usersData[0].name && userPass == usersData[0].password){
+    //for admin
+    if(userName == usersData[0].name || userName == usersData[0].name.toUpperCase() && userPass == usersData[0].password){
       
       bool = true
       window.location.href = "admin.html"
     }
+    //for incorrect user or password
     if(bool == false)
         alert("Username or Password is wrong")
 

@@ -1,7 +1,7 @@
 var userName = document.querySelector("#user");
 var logTime = document.querySelector("#timeStamp");
 
-var loggedName =sessionStorage.getItem("loggedUser");
+var loggedName = sessionStorage.getItem("loggedUser");
 var loggedTime = sessionStorage.getItem("loggedTime")
 
 
