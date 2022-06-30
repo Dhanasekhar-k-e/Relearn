@@ -14,14 +14,16 @@ var entry ={
         "time":loggedTime
     }
 
-var existingEntries = JSON.parse(localStorage.getItem("allEntries"));
+var existingEntries = JSON.parse(sessionStorage.getItem("allEntries"));
 if(existingEntries == null) 
     existingEntries = [];
 
-localStorage.setItem("entryvalues",JSON.stringify(entry))
+sessionStorage.setItem("entryvalues",JSON.stringify(entry))
 existingEntries.push(entry);
-localStorage.setItem("allEntries", JSON.stringify(existingEntries));
-console.log(existingEntries)
+sessionStorage.setItem("allEntries", JSON.stringify(existingEntries));
+// console.log(existingEntries)
+
+
 function back() {
     window.location.href = "index.html";
   }
@@ -40,3 +42,6 @@ function back() {
       alert("logged out")
       back()
   }, 600000)
+
+
+

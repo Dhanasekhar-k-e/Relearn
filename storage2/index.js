@@ -1,5 +1,9 @@
 var usersData = [
     {
+      name:"admin",
+      password:"admin"
+    },
+    {
       name: "brucelee",
       password: "nevergivesup"
     },
@@ -17,7 +21,7 @@ var usersData = [
     }
   ]
   
-  // var data = sessionStorage.getItem()
+  // var data = localStorage.getItem()
 
   function login(){
 
@@ -26,37 +30,24 @@ var usersData = [
     var uPass = document.getElementById("password")
     var userPass = uPass.value
     
-    
-    for(var i = 0; i < usersData.length; i++){
+    //for customers
+    for(var i = 1; i < usersData.length; i++){
         var bool = false
         if(userName == usersData[i].name && userPass == usersData[i].password){
 
             var time=new Date().toLocaleString()
             var name=userName
- 
-            // var data={
-            //     Name:name,
-            //     Time:time
-            // }
             sessionStorage.setItem("loggedUser",name)
             sessionStorage.setItem("loggedTime",time)
-             
-            console.log(name)
-            console.log(time)
-            // usersLoggedList.push(JSON.parse(data))
-            
-            // usersData = localStorage.getItem("usersLogged")
-            // localStorage.setItem("usersLogged",str)
-            // var usersLoggedList = JSON.parse(usersData) || []
-            // var str = JSON.stringify(usersLoggedList)
- 
             bool = true
             window.location.href = "dash.html"
-            console.log(userName)
-            console.log(userPass)
-           
             
         }
+    }
+    if(userName == usersData[0].name && userPass == usersData[0].password){
+      
+      bool = true
+      window.location.href = "admin.html"
     }
     if(bool == false)
         alert("Username or Password is wrong")
