@@ -54,41 +54,40 @@ var usersData = [
   ]
 
   function login(){
-
+    
     var uName = document.getElementById("name")
     var userName = uName.value
     var uPass = document.getElementById("password")
     var userPass = uPass.value
-    
+    var bool = false
     //for customers login
     for(var i = 1; i < usersData.length; i++){
-        var bool = false
-        if(userName == usersData[i].name || userName == usersData[i].name.toUpperCase() && userPass == usersData[i].password){
+        
+        if(userName == usersData[i].name && userPass == usersData[i].password){
 
             var time=new Date().toLocaleString()
             var name=userName
-            
-            // localStorage.setItem("loggedUser",name)
-            // localStorage.setItem("loggedTime",time)
 
             sessionStorage.setItem("loggedUser",name)
             sessionStorage.setItem("loggedTime",time)
 
-            bool = true
             window.location.href = "dash.html"
+            bool = true
             
         }
     }
     //for admin
-    if(userName == usersData[0].name || userName == usersData[0].name.toUpperCase() && userPass == usersData[0].password){
-      
-      bool = true
+    var redirect = false
+    if(userName == usersData[0].name && userPass == usersData[0].password){
       window.location.href = "admin.html"
+      redirect = true
+      sessionStorage.setItem("redirect",redirect)
+      bool = true
     }
     //for incorrect user or password
     if(bool == false)
         alert("Username or Password is wrong")
 
   }
-  var btn = document.getElementById("login")
-  btn.addEventListener("click",login)
+  // var btn = document.getElementById("login")
+  // btn.addEventListener("click",login)

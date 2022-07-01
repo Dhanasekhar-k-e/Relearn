@@ -26,6 +26,7 @@ sessionStorage.setItem("allEntries", JSON.stringify(existingEntries));
 
 function back() {
     window.location.href = "index.html";
+    // sessionStorage.clear()
   }
   var x = 1
   function timer(){

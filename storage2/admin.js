@@ -1,6 +1,9 @@
-var parsedData = JSON.parse(sessionStorage.getItem("allEntries"))
+var parsedData = JSON.parse(sessionStorage.getItem("allEntries")) || []
 
-
+var redirect = JSON.parse(sessionStorage.getItem("redirect"))
+console.log(redirect)
+if(redirect == false || redirect == null)
+    window.location.href = "index.html"
 
 for(var i = 0; i < parsedData.length; i++){
 
@@ -73,8 +76,9 @@ function showUserData() {
     }
 }
 
-
+redirect = false;
 //logout function
 function back() {
     window.location.href = "index.html";
+    sessionStorage.setItem("redirect",redirect);
   }
