@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="os.css"></link>
+</head>
+<body>
+    <select id="select">
+        <option >choose</option>
+        <option onclick="callApi()">android</option>
+        <option onclick="callApi()">windows</option>
+        <option onclick="callApi()">ubuntu</option>
+        <option onclick="callApi()">macos</option>
+    </select>
+    <h1 id="os_name"></h1>
+    <table id="os_data">
+        <tr>
+            <td>
+                VERSION
+            </td>
+            <td>
+                NAME
+            </td>
+        </tr>
+    </table>
+    <script type="text/javascript" src="os.js"></script>
+</body>
+</html>
+
