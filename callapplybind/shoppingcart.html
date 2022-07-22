@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="shoppingcart.css"/>
+</head>
+<body>
+    <form>
+        <label>Product</label><br/>
+        <input id="product"/><br/>
+        <label>quantity</label><br/>
+        <input id="quantity"/><br/>
+        <label>value</label><br/>
+        <input id="value"/><br/>
+        
+    </form>
+    <button id="add" onclick="add()">add to cart</button>
+    <div id="container">
+        <table id="table"></table>
+        <p id="para"></p>
+        <button id="makeBill" onclick="calculate()">Make Bill</button>
+    </div>
+    <script type="text/javascript" src="shoppingcart.js"></script>
+</body>
+</html>
