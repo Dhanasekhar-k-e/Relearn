@@ -3,6 +3,7 @@
     /* flex-direction:row;
     flex-grow: initial; */
     grid-template-columns: auto auto auto ;
-
-
+}
+h1{
+    text-align:center
 }
