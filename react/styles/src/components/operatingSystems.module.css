@@ -1,0 +1,21 @@
+.list{
+    font-family: monospace;
+    font-size: 2em;
+    margin: 2em;
+    padding: 0;
+    list-style-type: '> ';
+    color:yellow;
+    background-color: blue;
+}
+.check{
+    background-color: orange;
+}
+#see{
+    background-color:green;
+}
+
+.test{
+    width:500px;
+    color:yellow;
+    border:5px solid red;
+}
